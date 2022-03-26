@@ -1,0 +1,21 @@
+#content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
+  .form-select{
+      width: 150px;
+      margin-left: 10px;
+  }
+
+  .form-control{
+    width: 300px;
+    margin-left: 10px;
+
+  }

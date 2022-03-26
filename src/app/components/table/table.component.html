@@ -1,0 +1,54 @@
+<div class="container mt-3">
+    <div>
+        <app-search></app-search>
+    </div>
+    <div class="p-2" id="table">
+    <table class="table table-striped  text-center">
+        <thead>
+          <tr>
+            <th scope="col">
+                <div class="form-check">
+                    <input class="form-check-input mx-auto" type="checkbox" value="">
+                </div>
+            </th>
+            <th scope="col">Value Date</th>
+            <th scope="col">Transaction ID</th>
+            <th scope="col">Movement Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr *ngFor="record of records; let i = index">
+            <th scope="row">
+                <div class="form-check">
+                    <input class="form-check-input mx-auto" type="checkbox" value="">
+                </div>
+            </th>
+            <td>{{records[i].date}}</td>
+            <td>{{records[i].transactionID}}</td>
+            <td>Money Transfer</td>
+            <td>
+                <input class="form-control opacity-75 w-50 mx-2 text-center" style="display:inline" type="text" [value]="records[i].transactionID">
+                <fa-icon  [icon]="faEye"></fa-icon>
+            </td>
+
+            <td *ngIf="i % 2 == 0"  class="text-success">
+                Active
+            </td>
+            <td *ngIf="i % 2 != 0"  class="text-danger">
+                Error
+            </td>
+            <td>
+                <fa-icon  [icon]="faEdit" class="mx-2"></fa-icon>
+
+                <fa-icon  [icon]="faTrash" class="mx-2"></fa-icon>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+</div>
